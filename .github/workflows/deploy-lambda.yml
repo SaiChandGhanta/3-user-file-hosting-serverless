@@ -35,13 +35,7 @@ jobs:
           mkdir staging && mv target/serverless-*.jar ./${{env.ARTIFACT_NAME}}
           ls -ltr
           env
-#          cp -r ./scripts/* ./
-#          mkdir codedeploy_artifact
-#          zip -r ${{env.ARTIFACT_NAME}} ./webservice.jar codedeploy/*.sh ./cloudwatch_config.json appspec.yml
-#          mv ${{env.ARTIFACT_NAME}} codedeploy_artifact/
-#          cd codedeploy_artifact
-#          pwd
-#          ls -al
+
       shell: bash
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
@@ -54,7 +48,7 @@ jobs:
 
     - name: copy artifact to s3
       run: |
-        aws s3 cp ./${{env.ARTIFACT_NAME}} s3://${{ secrets.S3_CODEDEPLOY_BUCKET }}/
+        aws s3 cp ./${{env.ARTIFACT_NAME}} s3://${{ secrets.S3_LAMBDA_BUCKET }}/
     - name: Update Lambda Function Code
       run: |
-        aws lambda update-function-code --function-name ${{env.LAMBDA_FUNCTION_NAME}} --s3-bucket ${{ secrets.S3_CODEDEPLOY_BUCKET }} --s3-key ${{env.ARTIFACT_NAME}}
+        aws lambda update-function-code --function-name ${{env.LAMBDA_FUNCTION_NAME}} --s3-bucket ${{ secrets.S3_LAMBDA_BUCKET }} --s3-key ${{env.ARTIFACT_NAME}}
