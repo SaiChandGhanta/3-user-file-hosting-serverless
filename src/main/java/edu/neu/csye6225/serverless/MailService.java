@@ -30,7 +30,7 @@ public class MailService {
             logger.log("Domain env is not set");
         }
         final String FROM = "Sender@"+domain;
-        String link = "http://"+domain+"/v1/verifyUserEmail?email="+email+"&token="+token;
+        String link = "https://"+domain+"/v1/verifyUserEmail?email="+email+"&token="+token;
         TEXTBODY += " open then the following URL in your browser window: ";
         TEXTBODY += link;
         TEXTBODY += " Thank you! And we are waiting for you";
