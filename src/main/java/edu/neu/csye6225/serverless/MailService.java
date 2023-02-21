@@ -24,9 +24,9 @@ public class MailService {
 
         LambdaLogger logger = context.getLogger();
         String domain = System.getenv("DOMAIN_NAME");
-        domain = "demo.saichandghanta.me";
+        domain = "demo.domain.me";
         if(domain.equals("")) {
-            domain = "demo.saichandghanta.me";
+            domain = "demo.domain.me";
             logger.log("Domain env is not set");
         }
         final String FROM = "Sender@"+domain;
