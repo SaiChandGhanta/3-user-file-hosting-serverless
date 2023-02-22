@@ -1,21 +1,17 @@
-# serverless
-CSYE6225 Spring2022 on-ground project/assignment submissions - serverless code
+# Description
 
-# Project - Infrastructure
-AWS CloudFormation Scripts
+A new user email verification is done using SNS, AWS Lambda, DynamoDB TTL and SendGrid.
 
 ## Technologies
 
 - Java
 - aws-lambda
-- Github Actions
-
-## Usage
-This is an ancillary project to assist in user registration for webservice.
-Have CICD enabled. A commit will automatically deploy to current lambda.
-Must have the cloud formation stack running for this to work.
+- aws-SNS
+- SendGrid
 
 
-## Owner
+## Infrasturcture and WebApp repos
 
-- Bipin Mandava - mandava.b@northeastern.edu - 002959192
+[Click here for Infrastructure repo](https://github.com/SaiChandGhanta/2-user-file-hosting-infrastructure)
+
+[Click here for WebApp repo](https://github.com/SaiChandGhanta/1-user-file-hosting-webapp)
